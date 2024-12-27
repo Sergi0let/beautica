@@ -11,7 +11,9 @@ export const About = () => {
             since ever <i>since as</i> been the industrys standard dummy text ever since
           </div>
           <div className="row-start-1 md:row-auto">
-            <h2 className="text-center text-title">Про мене</h2>
+            <h2 id="about" className="scroll-mt-16 text-center text-title md:scroll-mt-20">
+              Про мене
+            </h2>
           </div>
         </div>
         <div className="hidden md:block md:h-[var(--180-520)]"></div>

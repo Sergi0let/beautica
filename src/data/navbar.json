@@ -2,27 +2,27 @@
   "links": [
     {
       "name": "Про мене",
-      "link": "/about"
+      "link": "#about"
     },
     {
       "name": "Послуги",
-      "link": "/services"
+      "link": "#services"
     },
     {
       "name": "До та Після",
-      "link": "/before-after"
+      "link": "#before-after"
     },
     {
       "name": "Відгуки",
-      "link": "/reviews"
+      "link": "#reviews"
     },
     {
       "name": "Партнери",
-      "link": "/partners"
+      "link": "#partners"
     },
     {
       "name": "ЧАСТІ ПИТАННЯ",
-      "link": "/faq"
+      "link": "#faq"
     },
     {
       "name": "Косметика",

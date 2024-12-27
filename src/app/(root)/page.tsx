@@ -1,4 +1,4 @@
-import { About, Hero } from "@/components";
+import { About, Faq, Hero } from "@/components";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Hero />
       <About />
       <div className="flex-center h-32 border-b border-t border-gray-200">This is empty space for better layout</div>
+      <Faq />
     </main>
   );
 }

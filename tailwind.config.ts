@@ -48,6 +48,9 @@ const config: Config = {
         "title-footer": "clamp(3.125rem, -3.2212rem + 13.2212vw, 10rem)",
         btn: "clamp(0.875rem, 0.5288rem + 0.7212vw, 1.25rem)", // 14-20
         "txt-hero": "clamp(0.875rem, 0.6442rem + 0.4808vw, 1.125rem)", //14-18
+        "txt-24-32": "clamp(1.5rem, 1.0385rem + 0.9615vw, 2rem)",
+        "txt-16-20": "clamp(1rem, 0.7692rem + 0.4808vw, 1.25rem)",
+        "txt-12-16": "clamp(0.75rem, 0.5192rem + 0.4808vw, 1rem)",
       },
       lineHeight: {
         hero: "clamp(2.25rem, -3.8517rem + 12.7119vw, 6rem)", // 36-96

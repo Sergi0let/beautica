@@ -9,6 +9,7 @@ export * from "./GearIcon";
 export * from "./GearSmIcon";
 export * from "./InstagramIcon";
 export * from "./InstagramSmallIcon";
+export * from "./LineIcon";
 export * from "./LocationIcon";
 export * from "./LogoFooterIcon";
 export * from "./LogoIcon";

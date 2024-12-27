@@ -1,3 +1,5 @@
+"use client";
+
 import {
   BtnOrLink,
   BurgerIcon,
@@ -12,15 +14,19 @@ import {
 import navbar from "@/data/navbar.json";
 import { cn } from "@/lib/utils";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import { useState } from "react";
 
 type MobMenuProps = {
   className?: string;
 };
 
 export const MobMenu = ({ className }: MobMenuProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeSheet = () => setIsOpen(false);
   return (
     <div className={className}>
-      <Sheet>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger aria-label="Відкрити меню">
           <BurgerIcon className="h-4 w-6 transition hover:stroke-primary" />
         </SheetTrigger>
@@ -32,7 +38,12 @@ export const MobMenu = ({ className }: MobMenuProps) => {
           <ul>
             {navbar.links.map(({ name, link }) => (
               <li key={link}>
-                <a href={link} className="group flex cursor-pointer items-center py-[10px]">
+                <a
+                  href={link}
+                  onClick={closeSheet}
+                  type="button"
+                  className="group flex cursor-pointer items-center py-[10px]"
+                >
                   {link === "/cosmetics" && (
                     <StarIcon className="size-5 fill-secondary transition group-hover:fill-primary" />
                   )}

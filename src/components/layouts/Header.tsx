@@ -16,7 +16,7 @@ export const Header = () => {
         </Link>
         <ul className="hidden h-full flex-1 items-center justify-between gap-6 min-[1400px]:mr-4 min-[1400px]:flex">
           {navbar.links.map(({ name, link }) => (
-            <li key={link} className="header-item flex-1">
+            <li key={link} className="header-item">
               <a href={link} className="header-link group">
                 {link === "/cosmetics" && <StarIcon className="header-link-icon" />}
                 <span

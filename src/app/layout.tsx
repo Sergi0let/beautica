@@ -102,7 +102,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uk-UA">
+    <html lang="uk-UA" className="scroll-smooth">
       <body className={`${robotoCondensed.variable} ${sourceSerifPro.variable} flex min-h-screen flex-col antialiased`}>
         {children}
       </body>
