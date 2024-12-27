@@ -1,0 +1,10 @@
+{
+  "contacts": {
+    "phone": "+38(050) 078-82-94",
+    "address": "м.Київ, вул. Джона Маккейна, 26"
+  },
+  "social": {
+    "facebookUrl": "https://www.facebook.com/example",
+    "instagramUrl": "https://www.instagram.com/example"
+  }
+}
