@@ -7,6 +7,7 @@ export * from "./FacebookSmallIcon";
 export * from "./FlowerIcon";
 export * from "./GearIcon";
 export * from "./GearSmIcon";
+
 export * from "./InstagramIcon";
 export * from "./InstagramSmallIcon";
 export * from "./LineIcon";

@@ -1,0 +1,32 @@
+{
+  "links": [
+    {
+      "name": "Про мене",
+      "link": "#about"
+    },
+    {
+      "name": "Послуги",
+      "link": "#services"
+    },
+    {
+      "name": "До та Після",
+      "link": "#before-after"
+    },
+    {
+      "name": "Відгуки",
+      "link": "#reviews"
+    },
+    {
+      "name": "Партнери",
+      "link": "#partners"
+    },
+    {
+      "name": "ЧАСТІ ПИТАННЯ",
+      "link": "#faq"
+    },
+    {
+      "name": "Косметика",
+      "link": "/cosmetics"
+    }
+  ]
+}

@@ -30,13 +30,17 @@
   --16-32: clamp(1rem, 0.0769rem + 1.9231vw, 2rem);
   --32-72: clamp(2rem, -0.3077rem + 4.8077vw, 4.5rem);
   --12-40: clamp(0.75rem, -0.8654rem + 3.3654vw, 2.5rem);
+  --12-16: clamp(0.75rem, 0.5192rem + 0.4808vw, 1rem);
+  --12-24: clamp(0.75rem, 0.0577rem + 1.4423vw, 1.5rem);
   --14-20: clamp(0.875rem, 0.5288rem + 0.7212vw, 1.25rem);
   --20-26: clamp(1.25rem, 0.9038rem + 0.7212vw, 1.625rem);
+  --20-60: clamp(1.25rem, -1.0577rem + 4.8077vw, 3.75rem);
   --32-62: clamp(2rem, 0.2692rem + 3.6058vw, 3.875rem);
   --8-60: clamp(0.5rem, -2.5rem + 6.25vw, 3.75rem);
   --200-488: clamp(12.5rem, -4.1154rem + 34.6154vw, 30.5rem);
   --130-170: clamp(8.125rem, 5.8173rem + 4.8077vw, 10.625rem);
-  --180-520: clamp(11.25rem, -8.3654rem + 40.8654vw, 32.5rem);
+  /* --180-520: clamp(11.25rem, -8.3654rem + 40.8654vw, 32.5rem); */
+  --180-590: clamp(11.25rem, -12.4038rem + 49.2788vw, 36.875rem);
   --16-24: clamp(1rem, 0.5385rem + 0.9615vw, 1.5rem);
   /* --24-32: clamp(1.5rem, 1.0385rem + 0.9615vw, 2rem); */
   --40-533: clamp(2.5rem, -25.9423rem + 59.2548vw, 33.3125rem);
@@ -84,17 +88,31 @@ h6 {
     margin-inline: auto;
     padding-inline: var(--padding-container-inline);
   }
+  .wrap-tertiary,
   .wrap-secondary {
     max-width: 100%;
     margin-inline: var(--margin-container-secondary-inline);
-    background-image: url("/bg/noise-color.png");
+
     @apply rounded-2xl md:rounded-[32px];
   }
+  .wrap-tertiary {
+    @apply bg-secondary-50;
+  }
+  .wrap-secondary {
+    background-image: url("/bg/noise-color.png");
+  }
+
+  .wrap-tertiary,
   .wrap-secondary > div {
     max-width: var(--container-secondary-width);
     margin-inline: auto;
     padding-inline: var(--padding-container-secondary-inline);
+  }
+  .wrap-secondary > div {
     @apply text-white;
+  }
+  .wrap-tertiary > div {
+    @apply text-primary;
   }
 
   .img-footer {
@@ -141,10 +159,11 @@ h6 {
     width: 100%;
     height: 2px;
     border-radius: 50%;
-    background-color: #b62121;
+    /* background-color: #b62121; */
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease-in-out;
+    @apply bg-secondary;
   }
   .header-item:hover::before {
     transform: scaleX(1);
@@ -281,8 +300,9 @@ h6 {
   .partners-list_item::before,
   .partners-list_item::after {
     content: "";
-    background-color: #b62121;
+    /* background-color: #b62121; */
     position: absolute;
+    @apply bg-secondary;
   }
   .partners-list_item::before {
     height: 100%;
@@ -306,15 +326,33 @@ h6 {
     transform: rotate(29deg) scaleX(2);
     @apply h-px w-full bg-secondary;
   }
+  /* ========== */
+  /* before after */
+  .tab-list {
+    margin-inline: -16px;
+    scroll-snap-type: x mandatory;
+    @apply flex-center -mx-4 overflow-x-auto whitespace-nowrap text-nowrap pb-[var(--12-24)] pt-[var(--24-50)] md:mx-0;
+    scrollbar-width: none;
+  }
+  .tab-list::-webkit-scrollbar {
+    display: none; /* Приховує скролбар у Chrome, Safari */
+  }
+  .tab-trigger {
+    scroll-snap-align: start;
+    @apply flex-center gap-2 px-2 text-txt-12-16 font-medium uppercase;
+  }
+  /* ========== */
+  /* before after */
 
   /* ========= */
 
   .line {
     max-width: calc(100% - 32px);
-    height: 1px;
+    /* height: 1px;
     background-color: #ffceca;
     opacity: 40%;
-    margin-inline: auto;
+    margin-inline: auto; */
+    @apply mx-auto h-px bg-secondary-75 opacity-40;
   }
 }
 
@@ -372,4 +410,20 @@ h6 {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+}
+.patter-img {
+  --square-size: 3px;
+  --half-square-size: calc(var(--square-size) / 2);
+  --color: #b62121;
+
+  background-image: linear-gradient(45deg, var(--color) 25%, transparent 25%),
+    linear-gradient(135deg, var(--color) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--color) 75%),
+    linear-gradient(135deg, transparent 75%, var(--color) 75%);
+  background-size: var(--square-size) var(--square-size);
+  background-position:
+    0 0,
+    var(--half-square-size) 0,
+    var(--half-square-size) var(--half-square-size),
+    0px var(--half-square-size);
 }
