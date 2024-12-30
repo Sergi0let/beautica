@@ -19,16 +19,16 @@ export const BeforeAfterList = () => {
   }
 
   return (
-    <ul className="grid grid-cols-2 gap-4 border-t border-secondary-75 pt-[var(--20-60)] md:grid-cols-3 lg:grid-cols-4">
+    <ul className="before-list">
       {Array.from({ length: 10 }).map((_, index) => (
-        <li key={index} className="relative justify-items-center md:justify-items-stretch">
+        <li key={index} className="before-list-item">
           {isTabletOrLarger ? (
             <div
               className="group relative"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="relative h-[140px] w-[140px] transition-all duration-300 ease-in-out group-hover:opacity-0">
+              <div className="before-group-image-container">
                 <Image
                   src="/before-after/1.jpg"
                   className="h-full w-full object-cover brightness-75"
@@ -38,11 +38,9 @@ export const BeforeAfterList = () => {
                 />
                 <div className="patter-img absolute inset-0 h-full w-full overflow-hidden mix-blend-multiply" />
               </div>
-              <p className="mt-2 text-xs font-medium uppercase transition-all duration-300 ease-in-out group-hover:opacity-0">
-                біоревіталізація
-              </p>
+              <p className="before-text-caption">біоревіталізація</p>
 
-              <div className="absolute left-0 top-0 z-10 h-auto w-full scale-0 transform border border-secondary bg-white p-3 opacity-0 shadow-lg transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-100 lg:p-5">
+              <div className="before-group-hover-content">
                 <figure>
                   <Image
                     src="/before-after/1.jpg"
@@ -51,16 +49,14 @@ export const BeforeAfterList = () => {
                     height={280}
                     alt="before"
                   />
-                  <figcaption className="pt-2 text-center text-sm font-medium uppercase lg:text-2xl">
-                    біоревіталізація
-                  </figcaption>
+                  <figcaption className="before-figure-caption">біоревіталізація</figcaption>
                 </figure>
               </div>
             </div>
           ) : (
             <Drawer>
               <DrawerTrigger>
-                <div className="group relative h-[140px] w-[140px] brightness-90">
+                <div className="before-drawer-trigger group">
                   <Image
                     src="/before-after/1.jpg"
                     className="h-full w-full object-cover"
@@ -70,7 +66,7 @@ export const BeforeAfterList = () => {
                   />
                   <div className="patter-img absolute inset-0 h-full w-full overflow-hidden mix-blend-multiply" />
                 </div>
-                <p className="mt-2 text-xs font-medium uppercase">біоревіталізація</p>
+                <p className="text-xs font-medium uppercase">біоревіталізація</p>
               </DrawerTrigger>
 
               <DrawerContent className="px-5">

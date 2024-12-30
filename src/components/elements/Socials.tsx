@@ -1,6 +1,7 @@
-import { FacebookIcon, FacebookSmallIcon, InstagramIcon, InstagramSmallIcon } from "@/components";
+import { FacebookIcon, FacebookSmallIcon, InstagramSmallIcon } from "@/components";
 import contactsData from "@/data/contacts.json";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type SocialsProps = {
   className?: string;
@@ -25,7 +26,8 @@ export const Socials = ({ className, type }: SocialsProps) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <InstagramIcon className="size-8" />
+          {/* <InstagramIcon className="size-8" /> */}
+          <Image src="/icons/instagram.png" alt="Instagram" width={32} height={32} />
         </a>
       </div>
     );
@@ -52,7 +54,9 @@ export const Socials = ({ className, type }: SocialsProps) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <InstagramIcon className="hidden size-8 md:block" />
+          {/* <InstagramIcon className="hidden size-8 md:block" /> */}
+          <Image src="/icons/instagram.png" alt="Instagram" className="hidden size-8 md:block" width={32} height={32} />
+
           <InstagramSmallIcon className="size-5 md:hidden" />
           <span className="text-md uppercase md:hidden">INSTAGRAM</span>
         </a>

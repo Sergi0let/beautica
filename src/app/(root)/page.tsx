@@ -1,4 +1,4 @@
-import { About, BeforeAfter, Faq, Hero, Partners } from "@/components";
+import { About, BeforeAfter, Faq, Hero, Partners, Testimanials } from "@/components";
 
 export default function Home() {
   return (
@@ -6,7 +6,7 @@ export default function Home() {
       <Hero />
       <About />
       <BeforeAfter />
-      {/* <div className="flex-center h-32 border-b border-t border-gray-200">This is empty space for better layout</div> */}
+      <Testimanials />
       <Partners />
       <Faq />
     </main>

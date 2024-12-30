@@ -18,8 +18,10 @@ export const About = () => {
         </div>
         <div className="hidden md:block md:h-[var(--180-590)]"></div>
         <div className="about-photo">
-          <Image src="/about/1.webp" alt="Photo Viki" width={488} height={688} />
-          <ParallaxMask />
+          <div className="relative">
+            <Image src="/about/1.webp" alt="Photo Viki" width={488} height={688} className="relative z-10" />
+            <ParallaxMask />
+          </div>
         </div>
         <ul className="about-items">
           <li className="about-item">

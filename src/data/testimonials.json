@@ -1,0 +1,34 @@
+{
+  "testimonials": [
+    {
+      "name": "Olivia Johnson",
+      "avatar": "https://i.pravatar.cc/200?img=11",
+      "comment": "I recently had the biorevitalization treatment at Beatica, and I'm absolutely thrilled with the results. Highly recommend!"
+    },
+    {
+      "name": "Liam Smith",
+      "avatar": "https://i.pravatar.cc/200?img=21",
+      "comment": "The team at Beatica is so professional and friendly. I felt comfortable throughout my entire visit. Thank you!"
+    },
+    {
+      "name": "Emma Brown",
+      "avatar": "https://i.pravatar.cc/200?img=31",
+      "comment": "Amazing service and incredible results! My skin feels rejuvenated and fresh. Will definitely be back."
+    },
+    {
+      "name": "Noah Williams",
+      "avatar": "https://i.pravatar.cc/200?img=41",
+      "comment": "A top-notch experience from start to finish. Beatica truly exceeded my expectations. Highly recommended!"
+    },
+    {
+      "name": "Sophia Garcia",
+      "avatar": "https://i.pravatar.cc/200?img=51",
+      "comment": "The attention to detail and care at Beatica is unmatched. My skin has never looked this good. Thank you so much!"
+    },
+    {
+      "name": "James Martinez",
+      "avatar": "https://i.pravatar.cc/200?img=61",
+      "comment": "Beatica offers exceptional services, and their team is incredibly knowledgeable. I trust them with all my skincare needs."
+    }
+  ]
+}
