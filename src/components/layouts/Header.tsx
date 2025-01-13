@@ -1,4 +1,4 @@
-import { Contacts, LogoIcon, MobMenu, Socials, StarIcon } from "@/components";
+import { BtnInstagram, Contacts, LogoIcon, MobMenu, StarIcon } from "@/components";
 import navbar from "@/data/navbar.json";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -34,7 +34,8 @@ export const Header = () => {
         <div className="hidden md:flex">
           <Contacts type="primary" classsName="flex-row-reverse uppercase text-sm" />
         </div>
-        <Socials type="primary" className="" />
+        <BtnInstagram />
+        {/* <Socials type="primary" className="" /> */}
         <MobMenu className="min-[1400px]:hidden" />
       </div>
       <div className="line" />

@@ -103,7 +103,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk-UA" className="scroll-smooth">
-      <body className={`${robotoCondensed.variable} ${sourceSerifPro.variable} flex min-h-screen flex-col antialiased`}>
+      <body
+        className={`${robotoCondensed.variable} ${sourceSerifPro.variable} relative flex min-h-screen flex-col antialiased`}
+      >
         {children}
       </body>
     </html>

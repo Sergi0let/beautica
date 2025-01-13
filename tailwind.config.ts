@@ -37,6 +37,9 @@ const config: Config = {
           hover: "#A6FF00",
           DEFAULT: "#D9FF00",
         },
+        focus: {
+          DEFAULT: "#F0F014",
+        },
         white: {
           "100": "#F7F7F7",
           DEFAULT: "#FFFFFF",
@@ -53,6 +56,7 @@ const config: Config = {
         "txt-16-20": "clamp(1rem, 0.7692rem + 0.4808vw, 1.25rem)",
         "txt-18-24": "clamp(1.125rem, 0.7788rem + 0.7212vw, 1.5rem)",
         "txt-12-16": "clamp(0.75rem, 0.5192rem + 0.4808vw, 1rem)",
+        "txt-24-48": "var(--24-48)",
       },
       lineHeight: {
         hero: "clamp(2.25rem, -3.8517rem + 12.7119vw, 6rem)", // 36-96

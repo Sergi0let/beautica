@@ -39,10 +39,12 @@
   --8-60: clamp(0.5rem, -2.5rem + 6.25vw, 3.75rem);
   --8-82: clamp(0.5rem, -3.7692rem + 8.8942vw, 5.125rem);
   --200-488: clamp(12.5rem, -4.1154rem + 34.6154vw, 30.5rem);
+  --295-392: clamp(18.4375rem, 12.246rem + 12.8989vw, 24.5rem);
   --130-170: clamp(8.125rem, 5.8173rem + 4.8077vw, 10.625rem);
   --20-40: clamp(1.25rem, 0.0962rem + 2.4038vw, 2.5rem);
-  /* --180-520: clamp(11.25rem, -8.3654rem + 40.8654vw, 32.5rem); */
-  --180-590: clamp(11.25rem, -12.4038rem + 49.2788vw, 36.875rem);
+  --24-48: clamp(1.5rem, 0.1154rem + 2.8846vw, 3rem);
+
+  --430-588: clamp(26.875rem, 17.7596rem + 18.9904vw, 36.75rem);
   --16-24: clamp(1rem, 0.5385rem + 0.9615vw, 1.5rem);
   /* --24-32: clamp(1.5rem, 1.0385rem + 0.9615vw, 2rem); */
   --40-533: clamp(2.5rem, -25.9423rem + 59.2548vw, 33.3125rem);
@@ -193,6 +195,15 @@ h6 {
       content: "Тонке підкреслення Вашої природної краси"; /* З нерозривними пробілами */
     }
   }
+  .title-sertification {
+    @apply mb-[var(--24-50)] scroll-mt-16 text-pretty text-title text-secondary md:scroll-mt-20 lg:indent-[var(--48-176)];
+  }
+  .title-sertification span {
+    display: block;
+  }
+  .title-sertification span:first-of-type {
+    text-align: right;
+  }
 
   /* ===== */
   /* about */
@@ -220,7 +231,7 @@ h6 {
     @apply size-[var(--32-62)] flex-shrink-0;
   }
   .about-photo {
-    @apply mx-auto w-[var(--200-488)] md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2;
+    @apply absolute bottom-0 left-1/2 mx-auto w-[var(--295-392)] -translate-x-1/2 sm:-translate-x-1/3;
   }
   .about-photo img {
     @apply mx-auto h-full w-full object-cover;
@@ -255,6 +266,7 @@ h6 {
 
     transition: transform 0.3s ease;
   }
+
   @media screen and (max-width: 768px) {
     .accordion-summary::before,
     .accordion-summary:after {
@@ -421,6 +433,47 @@ h6 {
     margin-inline: auto; */
     @apply mx-auto h-px bg-secondary-75 opacity-40;
   }
+
+  /* Початковий стан елементів */
+  [data-fade] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  [data-delay-one] {
+    transition-delay: 0.3s;
+  }
+  [data-delay-three] {
+    transition-delay: 0.6s;
+  }
+  [data-delay-three] {
+    transition-delay: 0.9s;
+  }
+  [data-delay-four] {
+    transition-delay: 1.2s;
+  }
+
+  /* Коли елемент стає видимим */
+  [data-fade][data-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Коли елемент знову невидимий */
+  [data-fade][data-visible="false"] {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* inputs  */
+  .field-label {
+    @apply mb-1 block text-sm font-semibold text-white md:mb-2 md:text-base;
+  }
+  .field-input {
+    @apply w-full rounded-lg px-3 py-[10px] text-sm text-primary md:p-[14px] md:text-base;
+  }
 }
 
 @layer base {
@@ -494,3 +547,54 @@ h6 {
     var(--half-square-size) var(--half-square-size),
     0px var(--half-square-size);
 }
+
+/* -----INSTAGRAM---- */
+.insta-btn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.insta-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+.insta-bg {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.insta-btn:hover .insta-bg {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+.insta-btn:hover .insta-container {
+  background-color: rgba(156, 156, 156, 0.466);
+}
+/* ------------ */

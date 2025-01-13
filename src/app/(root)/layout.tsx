@@ -1,4 +1,4 @@
-import { Footer, Header } from "@/components";
+import { Footer, Header, ScrollTrace } from "@/components";
 import React from "react";
 
 export default function Layout({
@@ -8,6 +8,7 @@ export default function Layout({
 }>) {
   return (
     <>
+      <ScrollTrace />
       <Header />
       {children}
       <Footer />

@@ -5,9 +5,13 @@ import { useMediaQuery } from "react-responsive";
 
 export const useParallax = (maxTranslate: number = 10) => {
   const [translate, setTranslate] = useState("translate(0px, 0px)");
+  const [isClient, setIsClient] = useState(false); // Перевірка клієнтського рендерингу
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
+    setIsClient(true); // Встановити стан клієнта після завантаження
+    if (!isDesktop) return; // Додати обробник тільки для десктопів
+
     const handleMouseMove = (event: MouseEvent) => {
       const { clientX, clientY } = event;
       const xPercentage = clientX / window.innerWidth;
@@ -22,7 +26,8 @@ export const useParallax = (maxTranslate: number = 10) => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [maxTranslate]);
+  }, [isDesktop, maxTranslate]);
 
-  return isDesktop ? translate : "translate(-3px, -2px)";
+  // Для серверного рендерингу повертаємо статичний стиль
+  return isClient && isDesktop ? translate : "translate(0px, 0px)";
 };

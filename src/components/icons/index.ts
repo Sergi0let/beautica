@@ -2,14 +2,10 @@ export * from "./ArrowIcon";
 export * from "./BurgerIcon";
 export * from "./CertificateIcon";
 export * from "./CloseIcon";
-export * from "./FacebookIcon";
-export * from "./FacebookSmallIcon";
 export * from "./FlowerIcon";
 export * from "./GearIcon";
 export * from "./GearSmIcon";
-
 export * from "./InstagramIcon";
-export * from "./InstagramSmallIcon";
 export * from "./LineIcon";
 export * from "./LocationIcon";
 export * from "./LogoFooterIcon";

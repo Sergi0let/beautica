@@ -1,16 +1,6 @@
 "use client";
 
-import {
-  BtnOrLink,
-  BurgerIcon,
-  Contacts,
-  LogoIcon,
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  Socials,
-  StarIcon,
-} from "@/components";
+import { BtnOrLink, BurgerIcon, Contacts, LogoIcon, Sheet, SheetContent, SheetTrigger, StarIcon } from "@/components";
 import navbar from "@/data/navbar.json";
 import { cn } from "@/lib/utils";
 import { DialogTitle } from "@radix-ui/react-dialog";
@@ -33,7 +23,6 @@ export const MobMenu = ({ className }: MobMenuProps) => {
         <SheetContent className="flex w-80 flex-col overflow-auto bg-white">
           <DialogTitle className="flex-between mb-[6px] border-b border-secondary-75 pb-[14px]">
             <LogoIcon className="w-28" />
-            <Socials type="primary" className="mr-10" />
           </DialogTitle>
           <ul>
             {navbar.links.map(({ name, link }) => (
@@ -61,7 +50,6 @@ export const MobMenu = ({ className }: MobMenuProps) => {
           </ul>
 
           <Contacts type="primary" classsName="uppercase flex-1 flex-col-reverse py-[10px] gap-[10px]" />
-
           <BtnOrLink title="Записатись на прийом" className="mb-8 min-h-8" />
         </SheetContent>
       </Sheet>

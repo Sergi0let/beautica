@@ -69,7 +69,15 @@ export const BtnOrLink = ({
 
   if (to) {
     return (
-      <Link href={to || ""} aria-label={to || ""} className={baseStyles} onClick={handleClick} ref={linkRef}>
+      <Link
+        data-delay-four
+        data-fade
+        href={to || ""}
+        aria-label={to || ""}
+        className={baseStyles}
+        onClick={handleClick}
+        ref={linkRef}
+      >
         {content}
       </Link>
     );

@@ -1,39 +1,98 @@
-import { BtnOrLink, Contacts, GearSmIcon, LogoFooterIcon, Socials } from "@/components";
-import Image from "next/image";
-import Link from "next/link";
+// import { BtnInstagram, BtnOrLink, Contacts, GearSmIcon, LogoFooterIcon } from "@/components";
+// import Image from "next/image";
+// import Link from "next/link";
+"use client";
+
+import React, { useRef, useState } from "react";
 
 export const Footer = () => {
+  const formRef = useRef(null);
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  type handleChangeType = {
+    target: {
+      name: string;
+      value: string;
+    };
+  };
+  const handleChange = ({ target: { name, value } }: handleChangeType) => {
+    setForm({ ...form, [name]: value });
+  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    // try {
+    //   await emailjs.send(
+    //     "service_vs6xkcp",
+    //     "template_my348hh",
+    //     {
+    //       from_name: form.name,
+    //       to_name: "Sergij",
+    //       from_email: form.email,
+    //       to_email: "s.vashkevych@gmail.com",
+    //       message: form.message,
+    //     },
+    //     "xIluwm5_TTVAixB2K",
+    //   );
+    //   setLoading(false);
+    //   alert("Message sent successfully!");
+    //   setForm({ name: "", email: "", message: "" });
+    // } catch (error) {
+    //   console.log(error);
+    //   setLoading(false);
+    //   alert("Something went wrong, please try again later.");
+    // }
+  };
   return (
     <footer className="wrap-secondary mb-6">
-      <div>
-        <div className="pb-[var(--64-109)] pt-[var(--64-120)] text-center text-title-footer leading-none">
-          <div className="relative">
-            <h2>
-              Підкресліть <span className="relative z-10 mt-2 block sm:mt-0 sm:inline">свою</span>
-            </h2>
-            <div className="relative z-10 mt-[var(--8-43)] flex items-center justify-center gap-2 font-sourceSerifPro">
-              <GearSmIcon className="size-[var(--24-65)]" />
-              чарівність
-              <GearSmIcon className="size-[var(--24-65)]" />
-            </div>
-            <Image className="img-footer" src="/footer/1.webp" alt="Girl in front" width={169} height={207} />
-          </div>
-          <BtnOrLink title="Записатись на прийом" className="mt-[var(--32-28)]" to="/" />
-        </div>
-        <hr className="bg-white opacity-50" />
-      </div>
-      <div className="flex flex-col py-6 md:flex-row md:items-center md:justify-between">
-        <Link href="/" aria-label="На головну сторінку">
-          <LogoFooterIcon className="w-[var(--131-161)]" />
-        </Link>
+      <div className="my-4">
+        <div className="border-focus rounded-[12px] border-2">
+          <div className="p-[var(--20-40)] xl:p-12">
+            <h2 className="text-txt-24-48 text-center leading-none">Підкресліть свою чарівність</h2>
+            <p className="mt-2 text-sm md:text-xl">
+              Залиште свої дані, і ми зв&apos;яжемось з вами для підкреслення вашого неповторного вигляду.
+            </p>
+            <form className="mt-3 md:mt-5">
+              <div className="">
+                <label htmlFor="name" className="">
+                  <span className="field-label">Ім&apos;я</span>
 
-        <nav className="flex flex-col space-y-3 md:flex-row md:gap-4 md:space-y-0">
-          <Contacts
-            type="secondary"
-            classsName="mt-5 space-y-3 md:space-y-0 uppercase md:mt-0 flex-col md:flex-row font-normal md:font-semibold"
-          />
-          <Socials type="secondary" className="relative z-20" />
-        </nav>
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                    className="field-input"
+                    placeholder="John Doe"
+                  />
+                </label>
+                <label htmlFor="phone" className="">
+                  <span className="field-label">Телефон</span>
+
+                  <input
+                    id="phone"
+                    type="number"
+                    name="phone"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                    className="field-input"
+                    placeholder="380 000 00 00"
+                  />
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </footer>
   );
