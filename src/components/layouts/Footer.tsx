@@ -3,11 +3,11 @@
 // import Link from "next/link";
 "use client";
 
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 
 export const Footer = () => {
-  const formRef = useRef(null);
-  const [loading, setLoading] = useState(false);
+  // const formRef = useRef(null);
+  // const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -23,39 +23,39 @@ export const Footer = () => {
   const handleChange = ({ target: { name, value } }: handleChangeType) => {
     setForm({ ...form, [name]: value });
   };
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  // e.preventDefault();
 
-    setLoading(true);
+  // setLoading(true);
 
-    // try {
-    //   await emailjs.send(
-    //     "service_vs6xkcp",
-    //     "template_my348hh",
-    //     {
-    //       from_name: form.name,
-    //       to_name: "Sergij",
-    //       from_email: form.email,
-    //       to_email: "s.vashkevych@gmail.com",
-    //       message: form.message,
-    //     },
-    //     "xIluwm5_TTVAixB2K",
-    //   );
-    //   setLoading(false);
-    //   alert("Message sent successfully!");
-    //   setForm({ name: "", email: "", message: "" });
-    // } catch (error) {
-    //   console.log(error);
-    //   setLoading(false);
-    //   alert("Something went wrong, please try again later.");
-    // }
-  };
+  // try {
+  //   await emailjs.send(
+  //     "service_vs6xkcp",
+  //     "template_my348hh",
+  //     {
+  //       from_name: form.name,
+  //       to_name: "Sergij",
+  //       from_email: form.email,
+  //       to_email: "s.vashkevych@gmail.com",
+  //       message: form.message,
+  //     },
+  //     "xIluwm5_TTVAixB2K",
+  //   );
+  //   setLoading(false);
+  //   alert("Message sent successfully!");
+  //   setForm({ name: "", email: "", message: "" });
+  // } catch (error) {
+  //   console.log(error);
+  //   setLoading(false);
+  //   alert("Something went wrong, please try again later.");
+  // }
+  // };
   return (
     <footer className="wrap-secondary mb-6">
       <div className="my-4">
-        <div className="border-focus rounded-[12px] border-2">
+        <div className="rounded-[12px] border-2 border-focus">
           <div className="p-[var(--20-40)] xl:p-12">
-            <h2 className="text-txt-24-48 text-center leading-none">Підкресліть свою чарівність</h2>
+            <h2 className="text-center text-txt-24-48 leading-none">Підкресліть свою чарівність</h2>
             <p className="mt-2 text-sm md:text-xl">
               Залиште свої дані, і ми зв&apos;яжемось з вами для підкреслення вашого неповторного вигляду.
             </p>
