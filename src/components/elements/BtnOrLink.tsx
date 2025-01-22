@@ -13,6 +13,7 @@ type BtnOrLinkProps = {
   className?: string;
   to?: string;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
   onClick?: MouseEventHandler;
 };
 
@@ -22,6 +23,7 @@ export const BtnOrLink = ({
   to = "",
   onClick,
   type = "button",
+  disabled = false,
 }: BtnOrLinkProps) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
@@ -84,7 +86,7 @@ export const BtnOrLink = ({
   }
 
   return (
-    <button type={type} className={baseStyles} onClick={handleClick} ref={buttonRef}>
+    <button type={type} disabled={disabled ? true : false} className={baseStyles} onClick={handleClick} ref={buttonRef}>
       {content}
     </button>
   );
