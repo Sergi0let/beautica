@@ -34,3 +34,55 @@ export const faqs = {
     },
   ],
 };
+
+export const sertificateData = {
+  amouts: [
+    {
+      id: 1,
+      name: "Років досвіду",
+      value: 5,
+    },
+    {
+      id: 2,
+      name: "Дипломів та сертифікатів",
+      value: 20,
+    },
+  ],
+  diploms: [
+    {
+      id: 1,
+      title: "Диплом на вищу освіту",
+      imgUrl: "/sertification/s1.png",
+    },
+    {
+      id: 2,
+      title: "Диплом на вищу освіту",
+      imgUrl: "/sertification/s1.png",
+    },
+    {
+      id: 3,
+      title: "Диплом на вищу освіту",
+      imgUrl: "/sertification/s2.png",
+    },
+    {
+      id: 4,
+      title: "Диплом на вищу освіту",
+      imgUrl: "/sertification/s2.png",
+    },
+    {
+      id: 5,
+      title: "Диплом на вищу освіту",
+      imgUrl: "/sertification/s1.png",
+    },
+    {
+      id: 6,
+      title: "Диплом на вищу освіту",
+      imgUrl: "/sertification/s1.png",
+    },
+    {
+      id: 7,
+      title: "Диплом на вищу освіту",
+      imgUrl: "/sertification/s2.png",
+    },
+  ],
+};

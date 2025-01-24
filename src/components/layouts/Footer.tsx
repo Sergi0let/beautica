@@ -52,20 +52,18 @@ export const Footer = () => {
   return (
     <footer className="wrap-secondary mb-6">
       <div className="mb-16 mt-9 w-full lg:mb-0 lg:mt-0 lg:flex lg:gap-4">
-        <div data-fade data-delay-one className="mx-auto h-auto w-[115px] lg:w-[438px]">
+        <div data-fade data-delay-one className="mx-auto h-auto w-[115px] lg:w-[400px]">
           <Image
             src="/footer/1.webp"
             alt="Photo Viki"
-            width={438}
+            width={400}
             height={743}
             className="h-full w-full bg-bottom object-contain object-left-bottom"
           />
         </div>
-        <div className="rounded-[12px] border-2 border-focus lg:my-[52px]">
-          <div className="p-[var(--20-40)] xl:p-12">
-            <h2 data-fade data-delay-two className="mx-auto text-center text-txt-24-48 leading-none lg:w-2/3">
-              Підкресліть свою чарівність
-            </h2>
+        <div data-fade data-delay-two className="rounded-[12px] border-2 border-focus lg:my-[12px]">
+          <div className="p-[var(--16-32)]">
+            <h2 className="mx-auto text-center text-txt-24-48 leading-none lg:w-2/3">Підкресліть свою чарівність</h2>
             <p data-fade data-delay-three className="mx-auto mt-2 text-center text-sm md:text-base lg:w-2/3">
               Залиште свої дані, і ми зв&apos;яжемось з вами для підкреслення вашого неповторного вигляду.
             </p>
@@ -75,7 +73,7 @@ export const Footer = () => {
               className="mt-3 border-b border-focus pb-5 text-center md:mt-5 lg:pb-10"
             >
               <div className="space-y-3 lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">
-                <label data-fade data-delay-four htmlFor="name" className="block">
+                <label htmlFor="name" className="block">
                   <span className="field-label">Ім&apos;я</span>
                   <input
                     id="name"
@@ -88,7 +86,7 @@ export const Footer = () => {
                     placeholder="John Doe"
                   />
                 </label>
-                <label data-fade data-delay-five htmlFor="phone" className="block">
+                <label htmlFor="phone" className="block">
                   <span className="field-label">Телефон</span>
                   <input
                     id="phone"
@@ -101,7 +99,7 @@ export const Footer = () => {
                     placeholder="380 000 00 00"
                   />
                 </label>
-                <label data-fade data-delay-six className="block w-full lg:col-span-2">
+                <label className="block w-full lg:col-span-2">
                   <span className="field-label">Чим я можу бути вам корисною?</span>
                   <textarea
                     className="field-input"
@@ -115,10 +113,10 @@ export const Footer = () => {
                   />
                 </label>
               </div>
-              <p data-fade data-delay-seven className="mb-3 mt-2 text-center text-xs font-normal lg:mb-5 lg:mt-4">
+              <p className="mb-3 mt-2 text-center text-xs font-normal lg:mb-5 lg:mt-4">
                 Натискаючи «Відправити», я даю згоду на обробку моїх персональних данних.
               </p>
-              <div data-fade data-delay-eight>
+              <div>
                 <BtnOrLink
                   disabled={loading}
                   title={loading ? "Відправляємо..." : "Відправити"}
@@ -127,9 +125,9 @@ export const Footer = () => {
                 />
               </div>
             </form>
-            <div data-fade data-delay-nine className="lg:flex lg:justify-between lg:gap-6">
-              <Contacts type="secondary" classsName="flex-col gap-4 mt-5 lg:flex-row lg:w-full lg:justify-around" />
-              <a href={socials[0].href} className="pointer mt-4 flex items-center gap-2 lg:flex-grow lg:pr-6">
+            <div className="pt-[var(--16-32)] lg:flex lg:justify-between lg:gap-6">
+              <Contacts type="secondary" classsName="flex-col gap-4 lg:flex-row lg:w-full lg:justify-around" />
+              <a href={socials[0].href} className="pointer flex items-center gap-2 lg:flex-grow lg:pr-6">
                 <InstagramIcon className="size-5" />
                 Instagram
               </a>

@@ -10,7 +10,7 @@ export const Faq = () => {
           data-delay-one
           className="mb-[var(--24-50)] scroll-mt-16 text-center text-title text-secondary md:scroll-mt-20"
         >
-          Поширені питання
+          <span className="block xl:translate-x-8">Поширені питання</span>
         </h2>
 
         <ul className="border-t border-secondary-75">

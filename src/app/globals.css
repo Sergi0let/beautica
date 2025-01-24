@@ -58,6 +58,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: var(--font-roboto-condensed), sans-serif; /* Робимо цей шрифт основним */
 }
 
@@ -97,7 +98,6 @@ h6 {
   .wrap-secondary {
     max-width: 100%;
     margin-inline: var(--margin-container-secondary-inline);
-
     @apply rounded-2xl md:rounded-[32px];
   }
   .wrap-tertiary {
@@ -185,18 +185,18 @@ h6 {
   /* ====== */
   /* hero */
   .title-hero {
-    @apply mb-[var(--16-66)] mt-16 max-w-[var(--320-1178)] text-center text-hero leading-hero text-secondary lg:text-left lg:indent-[var(--48-176)];
+    @apply mb-[var(--16-66)] mt-16 max-w-96 text-center text-hero leading-hero text-secondary md:max-w-full lg:flex lg:flex-col lg:text-left lg:indent-[var(--48-176)];
   }
-  .title-hero::before {
-    content: "Тонке підкреслення Вашої природної краси";
+  .title-hero span:first-child {
+    @apply lg:-translate-x-16;
+  }
+  .title-hero span:last-child {
+    @apply lg:-translate-x-56;
   }
   @media (min-width: 768px) {
-    .title-hero::before {
-      content: "Тонке підкреслення Вашої природної краси"; /* З нерозривними пробілами */
-    }
   }
   .title-sertification {
-    @apply mb-[var(--24-50)] scroll-mt-16 text-pretty text-title text-secondary md:scroll-mt-20 lg:indent-[var(--48-176)];
+    @apply mb-[var(--24-50)] scroll-mt-16 text-justify text-title leading-none text-secondary md:w-[67%] md:scroll-mt-20 md:indent-[58px] lg:indent-[158px] xl:indent-[258px];
   }
   .title-sertification span {
     display: block;
@@ -385,11 +385,34 @@ h6 {
   }
   /* ========== */
   /* slider testimonial */
+
   .testim-wrapper.swiper-wrapper {
     overflow-x: visible;
   }
+  .swiper:not(.swiper-initialized) .sertificate-slide {
+    @apply mr-3 w-[152px] md:mr-9 md:w-[227px];
+  }
+  .sertificate-slider {
+    @apply static w-full sm:mx-0 md:w-[64%] md:translate-x-[100px] md:!p-5;
+  }
+
+  @media (max-width: 768px) {
+    .sertificate-slider {
+      width: calc(100% + 32px);
+      margin-inline: -34px;
+      padding-inline: 34px;
+      transform: translateX(-15px);
+    }
+    .sertificate-wrapper {
+      padding-block: 14px;
+    }
+  }
+
   .testim-slide {
     @apply relative !h-auto rounded-[20px] border border-white p-[var(--16-32)];
+  }
+  .sertificate-slide {
+    @apply w-auto flex-shrink-0;
   }
   .testim-slide > figure > img {
     @apply h-auto w-[--120-200] rounded-full border-[2px] border-accent;
@@ -399,6 +422,9 @@ h6 {
   }
   .testim-progress-horizontal.swiper-scrollbar {
     @apply !relative z-10 mt-4 translate-y-1 bg-white/20 md:hidden;
+  }
+  .sertificate-progress-horizontal.swiper-scrollbar {
+    @apply !relative z-10 mt-4 translate-y-1 bg-secondary-50 md:hidden;
   }
   .testim-prev,
   .testim-next {

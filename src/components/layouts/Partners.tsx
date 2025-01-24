@@ -17,7 +17,7 @@ export const Partners = () => {
           </div>
           <div className="flex-center">
             <h2 id="partners" className="scroll-mt-16 text-center text-title text-secondary md:scroll-mt-20">
-              Наші партнери
+              <span className="block xl:-translate-x-6">Наші партнери</span>
             </h2>
           </div>
           <div className="md:flex-center hidden w-4/5 justify-self-end">
