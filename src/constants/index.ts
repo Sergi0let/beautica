@@ -1,3 +1,41 @@
+export const servecesData = [
+  {
+    id: 1,
+    name: "Ботулінотерапія",
+    price: 3200,
+    imgUrl: "/services/2.webp",
+    pageUrl: "botulinoterapia",
+  },
+  {
+    id: 2,
+    name: "Біоревіталізація",
+    price: 3200,
+    imgUrl: "/services/2.webp",
+    pageUrl: "biorevitalizatsiya",
+  },
+  {
+    id: 3,
+    name: "Контурна пластика губ",
+    price: 3200,
+    imgUrl: "/services/2.webp",
+    pageUrl: "konturna-plastika-gubu",
+  },
+  {
+    id: 4,
+    name: "Мезотерапія",
+    price: 3200,
+    imgUrl: "/services/2.webp",
+    pageUrl: "mezoterapia",
+  },
+  {
+    id: 5,
+    name: "Контурна пластика обличчя",
+    price: 3200,
+    imgUrl: "/services/2.webp",
+    pageUrl: "konturna-plastika-oblicha",
+  },
+];
+
 export const socials: Array<{ id: number; name: string; href: string }> = [
   {
     id: 1,

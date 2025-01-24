@@ -52,7 +52,7 @@ export const Footer = () => {
   return (
     <footer className="wrap-secondary mb-6">
       <div className="mb-16 mt-9 w-full lg:mb-0 lg:mt-0 lg:flex lg:gap-4">
-        <div data-fade data-delay-one className="mx-auto h-auto w-[115px] lg:w-[400px]">
+        <div data-fade data-delay-three className="mx-auto h-auto w-[115px] lg:w-[400px]">
           <Image
             src="/footer/1.webp"
             alt="Photo Viki"
@@ -61,7 +61,7 @@ export const Footer = () => {
             className="h-full w-full bg-bottom object-contain object-left-bottom"
           />
         </div>
-        <div data-fade data-delay-two className="rounded-[12px] border-2 border-focus lg:my-[12px]">
+        <div data-fade className="rounded-[12px] border-2 border-focus lg:my-[12px]">
           <div className="p-[var(--16-32)]">
             <h2 className="mx-auto text-center text-txt-24-48 leading-none lg:w-2/3">Підкресліть свою чарівність</h2>
             <p data-fade data-delay-three className="mx-auto mt-2 text-center text-sm md:text-base lg:w-2/3">
