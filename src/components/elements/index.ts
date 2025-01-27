@@ -8,3 +8,4 @@ export * from "./CustomCursor";
 export * from "./MobMenu";
 export * from "./ParallaxMask";
 export * from "./ScrolTrace";
+export * from "./SelectServes";

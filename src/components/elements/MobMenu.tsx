@@ -1,9 +1,13 @@
 "use client";
 
 import { BtnOrLink, BurgerIcon, Contacts, LogoIcon, Sheet, SheetContent, SheetTrigger, StarIcon } from "@/components";
+import { servesTitle } from "@/constants";
 import navbar from "@/data/navbar.json";
 import { cn } from "@/lib/utils";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 type MobMenuProps = {
@@ -12,8 +16,11 @@ type MobMenuProps = {
 
 export const MobMenu = ({ className }: MobMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const selectData = Object.entries(servesTitle);
+  const pathname = usePathname();
 
   const closeSheet = () => setIsOpen(false);
+
   return (
     <div className={className}>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -21,10 +28,27 @@ export const MobMenu = ({ className }: MobMenuProps) => {
           <BurgerIcon className="h-4 w-6 transition hover:stroke-primary" />
         </SheetTrigger>
         <SheetContent className="flex w-80 flex-col overflow-auto bg-white">
-          <DialogTitle className="flex-between mb-[6px] border-b border-secondary-75 pb-[14px]">
+          <DialogTitle className="flex-between border-b border-secondary-75 pb-[14px]">
             <LogoIcon className="w-28" />
           </DialogTitle>
-          <ul>
+          <div>
+            {selectData
+              .filter((elem) => !elem.includes(pathname.split("/")[1]))
+              .map(([link, serve], index) => (
+                <Link
+                  onClick={closeSheet}
+                  href={`/${link.toLowerCase()}`}
+                  key={index}
+                  className="group flex cursor-pointer items-center py-[10px]"
+                >
+                  <span className="flex-1 font-medium uppercase text-primary transition group-hover:text-secondary">
+                    {serve}
+                  </span>
+                  <ChevronRight size={18} className="text-secondary" />
+                </Link>
+              ))}
+          </div>
+          <ul className="border-b border-t border-secondary-75 py-4">
             {navbar.links.map(({ name, link }) => (
               <li key={link}>
                 <a
@@ -49,7 +73,10 @@ export const MobMenu = ({ className }: MobMenuProps) => {
             ))}
           </ul>
 
-          <Contacts type="primary" classsName="uppercase flex-1 flex-col-reverse py-[10px] gap-[10px]" />
+          <Contacts
+            type="primary"
+            classsName="uppercase flex-1 border-b border-secondary-75 flex-col-reverse pt-[10px] pb-6 gap-[10px]"
+          />
           <BtnOrLink title="Записатись на прийом" className="mb-8 min-h-8" />
         </SheetContent>
       </Sheet>

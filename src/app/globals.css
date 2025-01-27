@@ -157,7 +157,7 @@ h6 {
 
   /* header */
   .header-item {
-    @apply relative mr-8;
+    @apply relative mr-[28px];
   }
   .header-item::before {
     content: "";
