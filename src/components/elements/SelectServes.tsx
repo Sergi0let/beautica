@@ -13,8 +13,6 @@ export const SelectServes = () => {
   const selectData = Object.entries(servesTitle);
   const pathname = usePathname();
 
-  if (!selectData) return null;
-
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -31,6 +29,8 @@ export const SelectServes = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  if (!selectData) return null;
 
   return (
     <div

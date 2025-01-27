@@ -14,8 +14,8 @@ export const NavMenuList = () => {
   return (
     <nav className="hidden h-full w-full justify-center min-[1540px]:flex">
       <ul className="h-full w-fit flex-1 items-center justify-center min-[1540px]:mr-4 min-[1540px]:flex">
-        {menuData.map(({ name, link }) => (
-          <li key={link} className="header-item">
+        {menuData.map(({ name, link }, index) => (
+          <li key={index} className="header-item">
             <a href={link} className="header-link group">
               {link === "/cosmetics" && <StarIcon className="header-link-icon" />}
               <span

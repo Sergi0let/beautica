@@ -15,7 +15,7 @@ export const ServesMain = ({ name, description, imgUrl }: ServesMainProps) => {
           <div className="inline-flex flex-wrap items-center gap-[10px] rounded-[32px] border border-secondary-75 bg-white px-3 py-2 md:p-3">
             <div className="flex gap-1 overflow-hidden">
               {Array.from({ length: 4 }, (_, i) => (
-                <StarReview className="size-4" id={i + 1} />
+                <StarReview key={i} className="size-4" id={i + 1} />
               ))}
             </div>
             <span className="text-sm uppercase md:text-base">124 клієнти задоволені</span>
