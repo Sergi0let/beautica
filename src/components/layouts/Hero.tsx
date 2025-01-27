@@ -10,11 +10,11 @@ export const Hero = () => {
           <span>природної краси</span>
         </h1>
       </div>
-      <div className="grid-rows-[auto, 1fr] mb-[var(--64-92)] grid grid-cols-2 gap-2 lg:grid-cols-3 lg:grid-rows-1 lg:gap-4">
+      <div className="mb-[var(--64-92)] grid grid-cols-2 grid-rows-[auto_1fr] gap-2 lg:grid-cols-3 lg:grid-rows-1 lg:gap-4">
         <Image
           data-delay-one
           data-fade
-          className="h-full w-full max-w-80 justify-self-end object-cover lg:h-auto lg:w-1/2 lg:justify-self-start"
+          className="size-full max-w-80 justify-self-end object-cover lg:h-auto lg:w-1/2 lg:justify-self-start"
           src="/hero/1.webp"
           width="248"
           height="192"
@@ -24,20 +24,20 @@ export const Hero = () => {
           <p
             data-fade
             data-delay-two
-            className="mb-[var(--16-32)] text-balance text-center text-txt-hero text-secondary-100 lg:text-pretty lg:text-left"
+            className="mb-[var(--16-32)] text-balance text-center text-txt-hero lg:text-pretty lg:text-left"
           >
             Тут не про зміни, а саме про підкреслення та підтримання Вашої особистої краси! Завдяки сучасним методам та
             косметологічним технологіям!
           </p>
-          <BtnOrLink to="#" title="Записатись на прийом" />
+          <BtnOrLink anchor="#assign-form" title="Записатись на прийом" />
         </div>
         <Image
           data-fade
           data-delay-three
-          className="h-full w-full max-w-80 object-cover"
+          className="h-full w-full max-w-[530px] object-cover"
           src="/hero/2.webp"
-          width="496"
-          height="285"
+          width="530"
+          height="305"
           alt="Face processing"
         />
       </div>

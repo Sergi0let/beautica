@@ -6,7 +6,7 @@ const Sertification = () => {
   return (
     <section>
       <div className="wrap-primary mb-[var(--64-80)]">
-        <div className="flex w-full items-center justify-center">
+        <div data-fade className="flex w-full items-center justify-center">
           <h2 className="title-sertification">
             Кожен сертифікат та диплом є підтвердженням моєї кваліфікації та відданості вашій природній красі
           </h2>

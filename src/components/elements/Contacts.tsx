@@ -27,7 +27,7 @@ export const Contacts = ({ type = "primary", classsName }: ContactsProps) => {
           {contactsData.contacts.phone}
         </span>
         {type === "secondary" && (
-          <div className="bg-red absolute bottom-0 right-full h-px w-full transition-all group-hover:right-0"></div>
+          <div className="absolute bottom-0 right-full h-px w-full transition-all group-hover:right-0"></div>
         )}
       </a>
       <div className="flex items-center gap-2">

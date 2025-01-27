@@ -6,15 +6,11 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <header className="sticky top-0 z-50 h-[60px] border-secondary/40 bg-white md:h-[80px] md:border-b">
-      <div className="wrap-primary flex h-full items-center gap-4 overflow-hidden">
-        <Link
-          href={"/"}
-          aria-label="На головну"
-          className="w-full flex-1 min-[1400px]:max-w-[161px] min-[1400px]:flex-shrink-0"
-        >
-          <LogoIcon className="w-[113px] md:max-w-[161px]" />
+      <div className="wrap-primary flex h-full items-center justify-between overflow-hidden">
+        <Link href={"/"} aria-label="На головну" className="flex-1">
+          <LogoIcon className="w-[113px] md:w-[161px]" />
         </Link>
-        <ul className="hidden h-full flex-1 items-center justify-between gap-6 min-[1400px]:mr-4 min-[1400px]:flex">
+        <ul className="hidden h-full w-fit flex-1 items-center justify-start min-[1400px]:mr-4 min-[1400px]:flex">
           {navbar.links.map(({ name, link }) => (
             <li key={link} className="header-item">
               <a href={link} className="header-link group">
@@ -35,7 +31,6 @@ export const Header = () => {
           <Contacts type="primary" classsName="flex-row-reverse uppercase text-sm" />
         </div>
         <BtnInstagram />
-        {/* <Socials type="primary" className="" /> */}
         <MobMenu className="min-[1400px]:hidden" />
       </div>
       <div className="line" />

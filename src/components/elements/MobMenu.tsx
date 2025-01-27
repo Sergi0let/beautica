@@ -17,7 +17,7 @@ export const MobMenu = ({ className }: MobMenuProps) => {
   return (
     <div className={className}>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger aria-label="Відкрити меню">
+        <SheetTrigger>
           <BurgerIcon className="h-4 w-6 transition hover:stroke-primary" />
         </SheetTrigger>
         <SheetContent className="flex w-80 flex-col overflow-auto bg-white">

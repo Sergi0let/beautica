@@ -50,7 +50,7 @@ export const Footer = () => {
     }
   };
   return (
-    <footer className="wrap-secondary mb-6">
+    <footer id="assign-form" className="wrap-secondary mb-6">
       <div className="mb-16 mt-9 w-full lg:mb-0 lg:mt-0 lg:flex lg:gap-4">
         <div data-fade data-delay-three className="mx-auto h-auto w-[115px] lg:w-[400px]">
           <Image

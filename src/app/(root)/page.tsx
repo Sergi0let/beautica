@@ -5,9 +5,9 @@ export default function Home() {
     <main className="relative flex-1">
       <Hero />
       <About />
+      <Services />
       <BeforeAfter />
       <Testimanials />
-      <Services />
       <Partners />
       <Sertification />
       <Faq />

@@ -59,6 +59,8 @@ const config: Config = {
         "txt-24-48": "var(--24-48)",
         "txt-16-48": "var(--16-48)",
         "txt-16-42": "var(--16-42)",
+        "txt-32-72": "var(--32-72)",
+        "txt-40-60": "var(--40-60)",
       },
       lineHeight: {
         hero: "clamp(2.25rem, -3.8517rem + 12.7119vw, 6rem)", // 36-96

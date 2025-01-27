@@ -11,10 +11,13 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import data from "@/data/testimonials.json";
+import { testimonialsData } from "@/constants";
+import { formatDate } from "@/lib/utils";
+import { TestimonialType } from "@/types/common-types";
 
 export const SliderTesimonials = () => {
   const isTabletOrLarger = useMediaQuery({ minWidth: 1024 });
+
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -35,18 +38,24 @@ export const SliderTesimonials = () => {
       style={{ overflow: "visible" }}
       wrapperClass="testim-wrapper"
     >
-      {data.testimonials.map(({ avatar, name, comment }: { avatar: string; name: string; comment: string }, index) => (
-        <SwiperSlide key={index} className="testim-slide">
+      {testimonialsData.map(({ id, avatar, name, comment, date }: TestimonialType) => (
+        <SwiperSlide key={id} className="testim-slide">
           <figure>
             <Image src={avatar} alt="testim-img" width={200} height={200} />
-            <figcaption className="mt-[var(--8-82)] text-btn font-semibold text-accent">{name}</figcaption>
+            <figcaption className="text-[18px] font-semibold text-accent md:mt-11 md:text-2xl">{name}</figcaption>
           </figure>
-          <p className="txt-18-24 mt-2">{comment}</p>
+          <p className="mt-2 text-balance text-sm md:text-xl">{comment}</p>
+
+          <div className="mt-4 flex grow items-end">
+            <time className="text-sm text-white/90 md:text-xl" dateTime={date}>
+              {formatDate(date)}
+            </time>
+          </div>
         </SwiperSlide>
       ))}
       <SwiperSlide className="testim-slide">
         <div className="flex h-full flex-col justify-between">
-          <h3 className="text-txt-32-42 font-regular leading-tight">Запишіться і підкресліть свою красу!</h3>
+          <h3 className="font-regular text-txt-32-42 leading-tight">Запишіться і підкресліть свою красу!</h3>
           <BtnOrLink title="Записатись на прийом" />
         </div>
       </SwiperSlide>

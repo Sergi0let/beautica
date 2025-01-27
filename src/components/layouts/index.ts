@@ -7,5 +7,6 @@ export * from "./Header";
 export * from "./Hero";
 export * from "./Partners";
 export * from "./sertifications";
+export * from "./serves";
 export * from "./Services";
 export * from "./testimonials";

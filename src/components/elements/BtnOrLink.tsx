@@ -14,6 +14,7 @@ type BtnOrLinkProps = {
   to?: string;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  anchor?: string;
   onClick?: MouseEventHandler;
 };
 
@@ -24,6 +25,7 @@ export const BtnOrLink = ({
   onClick,
   type = "button",
   disabled = false,
+  anchor,
 }: BtnOrLinkProps) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
@@ -32,7 +34,7 @@ export const BtnOrLink = ({
     if (!buttonRef || !linkRef) {
       return;
     }
-    const button = to ? linkRef.current : buttonRef.current;
+    const button = to || anchor ? linkRef.current : buttonRef.current;
     const rect = button!.getBoundingClientRect();
     const ripple = document.createElement("span");
 
@@ -82,6 +84,13 @@ export const BtnOrLink = ({
       >
         {content}
       </Link>
+    );
+  }
+  if (anchor) {
+    return (
+      <a href={anchor || ""} className={baseStyles} onClick={handleClick} ref={linkRef}>
+        {content}
+      </a>
     );
   }
 

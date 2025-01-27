@@ -1,8 +1,11 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 export const ScrollTrace = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
     window.scrollTo(0, 0);
     history.scrollRestoration = "manual";
@@ -46,7 +49,7 @@ export const ScrollTrace = () => {
     return () => {
       document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
     };
-  }, []);
+  }, [pathname]);
 
   return null; // Компонент не рендерить нічого в DOM
 };

@@ -1,4 +1,4 @@
-import { servecesData } from "@/constants";
+import { servicesData } from "@/constants";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,13 +8,14 @@ export const Services = () => {
   return (
     <section className="relative my-8">
       <div className="wrap-primary">
-        <h2 className="text-center text-title leading-none">
-          <span className="block text-secondary lg:-translate-x-12">Наші послуги</span>
+        <h2 className="text-center text-title leading-none lg:flex lg:text-left">
+          <span className="hidden w-1/3 lg:block"></span>
+          <span className="block -translate-x-4 text-secondary lg:translate-x-2">Ми робимо</span>
         </h2>
       </div>
       <CustomCursor />
       <ul id="services-section" className="mt-[var(--20-26)] border-b border-secondary-75">
-        {servecesData.map((service, index) => (
+        {servicesData.map((service, index) => (
           <li key={index} className="service-item group">
             <Link href={service.pageUrl}>
               <div className="service-item-link-mob">
