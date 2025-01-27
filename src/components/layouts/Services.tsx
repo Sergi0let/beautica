@@ -8,7 +8,10 @@ export const Services = () => {
   return (
     <section className="relative my-8">
       <div className="wrap-primary">
-        <h2 className="text-center text-title leading-none lg:flex lg:text-left">
+        <h2
+          id="services"
+          className="scroll-mt-16 text-center text-title leading-none md:scroll-mt-20 lg:flex lg:text-left"
+        >
           <span className="hidden w-1/3 lg:block"></span>
           <span className="block -translate-x-4 text-secondary lg:translate-x-2">Ми робимо</span>
         </h2>

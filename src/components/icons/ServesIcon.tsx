@@ -1,6 +1,6 @@
 import { SvgProps } from "@/types/common-types";
 
-export default function ServesIcon({ className }: SvgProps) {
+export function ServesIcon({ className }: SvgProps) {
   return (
     <svg fill="none" className={className} viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
       <circle cx="5" cy="5" fill="#B62121" r="4" />

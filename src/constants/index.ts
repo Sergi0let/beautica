@@ -1,4 +1,4 @@
-import { beforAfterDataType, ServicesRoute, TestimonialType } from "@/types/common-types";
+import { beforAfterDataType, NavMenuListType, ServicesRoute, TestimonialType } from "@/types/common-types";
 
 export const servesTitle = {
   [ServicesRoute.Botulinoterapia]: "Ботулінотерапія",
@@ -1243,3 +1243,54 @@ export const beforAfterData: beforAfterDataType[] = [
     slug: ServicesRoute.Botulinoterapia,
   },
 ];
+
+export const navMenuList: NavMenuListType = {
+  mainPage: [
+    {
+      name: "Про мене",
+      link: "#about",
+    },
+    {
+      name: "Послуги",
+      link: "#services",
+    },
+    {
+      name: "До та Після",
+      link: "#before-after",
+    },
+    {
+      name: "Відгуки",
+      link: "#reviews",
+    },
+    {
+      name: "Партнери",
+      link: "#partners",
+    },
+    {
+      name: "ЧАСТІ ПИТАННЯ",
+      link: "#faq",
+    },
+  ],
+  servesPage: [
+    {
+      name: "Про процедуру",
+      link: "#procedure",
+    },
+    {
+      name: "Етапи проведення",
+      link: "#stages",
+    },
+    {
+      name: "Ціни",
+      link: "#pricing",
+    },
+    {
+      name: "Відгуки",
+      link: "#reviews",
+    },
+    {
+      name: "Питання",
+      link: "#faq",
+    },
+  ],
+};

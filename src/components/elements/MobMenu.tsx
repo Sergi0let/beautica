@@ -1,8 +1,7 @@
 "use client";
 
 import { BtnOrLink, BurgerIcon, Contacts, LogoIcon, Sheet, SheetContent, SheetTrigger, StarIcon } from "@/components";
-import { servesTitle } from "@/constants";
-import navbar from "@/data/navbar.json";
+import { navMenuList, servesTitle } from "@/constants";
 import { cn } from "@/lib/utils";
 import { DialogTitle } from "@radix-ui/react-dialog";
 import { ChevronRight } from "lucide-react";
@@ -18,6 +17,7 @@ export const MobMenu = ({ className }: MobMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectData = Object.entries(servesTitle);
   const pathname = usePathname();
+  const linkData = navMenuList[pathname.split("/")[1] ? "servesPage" : "mainPage"];
 
   const closeSheet = () => setIsOpen(false);
 
@@ -49,8 +49,8 @@ export const MobMenu = ({ className }: MobMenuProps) => {
               ))}
           </div>
           <ul className="border-b border-t border-secondary-75 py-4">
-            {navbar.links.map(({ name, link }) => (
-              <li key={link}>
+            {linkData.map(({ link, name }, index) => (
+              <li key={index}>
                 <a
                   href={link}
                   onClick={closeSheet}

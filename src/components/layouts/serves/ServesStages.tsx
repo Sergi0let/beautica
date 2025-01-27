@@ -9,7 +9,9 @@ export const ServesStages = ({ stages }: ServesStagesProps) => {
     <section className="wrap-secondary mb-10 md:mb-20">
       <div className="py-[40px] lg:py-[80px]">
         <div className="text-center md:translate-x-2">
-          <h2 className="text-title leading-none">Етапи проведення</h2>
+          <h2 id="stages" className="scroll-mt-16 text-title leading-none md:scroll-mt-20">
+            Етапи проведення
+          </h2>
         </div>
 
         <div className="relative">

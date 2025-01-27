@@ -517,7 +517,7 @@ h6 {
   }
   .testim-prev,
   .testim-next {
-    @apply md:flex-center absolute top-1/2 z-10 hidden size-[var(--50-100)] -translate-y-1/2 rounded-full bg-accent text-center text-white transition-colors hover:bg-accent-hover;
+    @apply md:flex-center absolute top-1/2 z-10 hidden size-[var(--53-79)] -translate-y-1/2 rounded-full bg-accent text-center text-white transition-colors hover:bg-accent-hover;
   }
   .testim-prev {
     @apply left-0;

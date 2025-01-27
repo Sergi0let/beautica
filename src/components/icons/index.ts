@@ -13,4 +13,5 @@ export * from "./LogoIcon";
 export * from "./PhoneIcon";
 export * from "./ServesIcon";
 export * from "./StarIcon";
+export * from "./StarReview";
 export * from "./StarsIcon";

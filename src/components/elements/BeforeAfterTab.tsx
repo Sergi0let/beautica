@@ -72,7 +72,7 @@ export function BeforeAfterTab({ data }: { data: beforAfterDataType[] }) {
         </div>
       )}
 
-      <BeforeAfterList data={filteredData} />
+      <BeforeAfterList data={filteredData} slug={pathname.split("/")[1]} />
 
       {/* <Separator className="my-4" /> */}
       {/* <div className="bg-muted mt-4 rounded-md p-4">{tabs.find((tab) => tab.id === activeTab)?.content}</div> */}

@@ -6,6 +6,7 @@ export * from "./Contacts";
 export * from "./CursorWrapper";
 export * from "./CustomCursor";
 export * from "./MobMenu";
+export * from "./NavMenuList";
 export * from "./ParallaxMask";
 export * from "./ScrolTrace";
 export * from "./SelectServes";

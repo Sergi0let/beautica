@@ -61,3 +61,13 @@ export type beforAfterDataType = {
   mainView: boolean;
   slug: string;
 };
+
+export type NavMenuItemType = {
+  name: string;
+  link: string;
+};
+
+export type NavMenuListType = {
+  mainPage: NavMenuItemType[];
+  servesPage: NavMenuItemType[];
+};

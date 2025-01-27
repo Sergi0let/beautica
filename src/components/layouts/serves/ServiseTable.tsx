@@ -20,7 +20,7 @@ export const ServiseTable = ({ priceTable, name }: ServiseTableProps) => {
   return (
     <section className="wrap-primary mb-10 md:mb-20">
       <div className="md:-translate-x-[50px]">
-        <h2 className="text-center text-title leading-none text-secondary">
+        <h2 id="pricing" className="scroll-mt-16 text-center text-title leading-none text-secondary md:scroll-mt-20">
           Ціни на {priceName[name as keyof typeof priceName]}
         </h2>
       </div>

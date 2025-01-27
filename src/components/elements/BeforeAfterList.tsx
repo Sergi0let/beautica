@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 
-export const BeforeAfterList = ({ data }: { data: beforAfterDataType[] }) => {
+export const BeforeAfterList = ({ data, slug }: { data: beforAfterDataType[]; slug: string }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const dialogRefs = useRef<(HTMLDialogElement | null)[]>([]);
 
@@ -85,7 +85,7 @@ export const BeforeAfterList = ({ data }: { data: beforAfterDataType[] }) => {
                   <div className="before-group-image-container hover:opacity-50">
                     <Image src={`/${imgUrl}`} className="size-full object-cover" width={140} height={140} alt={name} />
                   </div>
-                  <p className="before-text-caption">{name}</p>
+                  {slug === "/" && <p className="before-text-caption">{name}</p>}
                 </div>
               ) : (
                 <Drawer>
@@ -99,7 +99,7 @@ export const BeforeAfterList = ({ data }: { data: beforAfterDataType[] }) => {
                         alt={name}
                       />
                     </div>
-                    <p className="text-xs font-medium uppercase">{name}</p>
+                    {slug === "/" && <p className="text-xs font-medium uppercase">{name}</p>}
                   </DrawerTrigger>
 
                   <DrawerContent className="px-5">
@@ -114,7 +114,7 @@ export const BeforeAfterList = ({ data }: { data: beforAfterDataType[] }) => {
                         />
                       </div>
                       <DialogTitle className="pb-5 pt-2 text-center font-robotoCondensed text-2xl font-medium uppercase">
-                        {name}
+                        {slug === "/" && name}
                       </DialogTitle>
                     </div>
                   </DrawerContent>
@@ -144,7 +144,9 @@ export const BeforeAfterList = ({ data }: { data: beforAfterDataType[] }) => {
                 height={320}
               />
             </div>
-            <figcaption className="before-figure-caption">{item.name}</figcaption>
+            {slug === "/" && (
+              <figcaption className="text-muted-foreground mt-4 text-center text-sm">{item.name}</figcaption>
+            )}
           </figure>
         </dialog>
       ))}

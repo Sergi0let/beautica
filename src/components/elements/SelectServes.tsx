@@ -5,7 +5,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import ServesIcon from "../icons/ServesIcon";
+import { ServesIcon } from "../icons";
 
 export const SelectServes = () => {
   const [isOpen, setIsOpen] = useState(false);

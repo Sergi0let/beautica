@@ -1,6 +1,4 @@
-import { BtnInstagram, Contacts, LogoIcon, MobMenu, SelectServes, StarIcon } from "@/components";
-import navbar from "@/data/navbar.json";
-import { cn } from "@/lib/utils";
+import { BtnInstagram, Contacts, LogoIcon, MobMenu, NavMenuList, SelectServes } from "@/components";
 import Link from "next/link";
 
 export const Header = () => {
@@ -15,23 +13,7 @@ export const Header = () => {
             <SelectServes />
           </div>
         </div>
-        <ul className="hidden h-full w-fit flex-1 items-center justify-start min-[1540px]:mr-4 min-[1540px]:flex">
-          {navbar.links.map(({ name, link }) => (
-            <li key={link} className="header-item">
-              <a href={link} className="header-link group">
-                {link === "/cosmetics" && <StarIcon className="header-link-icon" />}
-                <span
-                  className={cn(
-                    "header-link-text",
-                    link === "/cosmetics" && "ml-1 !text-secondary group-hover:text-primary",
-                  )}
-                >
-                  {name}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <NavMenuList />
         <div className="hidden md:flex">
           <Contacts type="primary" classsName="flex-row-reverse uppercase text-sm" />
         </div>
