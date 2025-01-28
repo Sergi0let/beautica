@@ -5,6 +5,7 @@ export * from "./CloseIcon";
 export * from "./FlowerIcon";
 export * from "./GearIcon";
 export * from "./GearSmIcon";
+export * from "./InfoIcon";
 export * from "./InstagramIcon";
 export * from "./LineIcon";
 export * from "./LocationIcon";

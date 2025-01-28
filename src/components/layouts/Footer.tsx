@@ -51,14 +51,14 @@ export const Footer = () => {
   };
   return (
     <footer id="assign-form" className="wrap-secondary mb-6">
-      <div className="mb-16 mt-9 w-full lg:mb-0 lg:mt-0 lg:flex lg:gap-4">
+      <div className="mb-16 mt-9 w-full lg:my-0 lg:flex lg:gap-4">
         <div data-fade data-delay-three className="mx-auto h-auto w-[115px] lg:w-[400px]">
           <Image
             src="/footer/1.webp"
             alt="Photo Viki"
             width={400}
             height={743}
-            className="h-full w-full bg-bottom object-contain object-left-bottom"
+            className="size-full bg-bottom object-contain object-left-bottom"
           />
         </div>
         <div data-fade className="rounded-[12px] border-2 border-focus lg:my-[12px]">
@@ -127,7 +127,7 @@ export const Footer = () => {
             </form>
             <div className="pt-[var(--16-32)] lg:flex lg:justify-between lg:gap-6">
               <Contacts type="secondary" classsName="flex-col gap-4 lg:flex-row lg:w-full lg:justify-around" />
-              <a href={socials[0].href} className="pointer flex items-center gap-2 lg:flex-grow lg:pr-6">
+              <a href={socials[0].href} className="flex cursor-pointer items-center gap-2 lg:grow lg:pr-6">
                 <InstagramIcon className="size-5" />
                 Instagram
               </a>

@@ -1,6 +1,7 @@
-import { discountPercentage } from "@/lib/utils";
+import { InfoIcon } from "@/components/icons";
+import { discountPercentage, formatPrice } from "@/lib/utils";
 import { PriceTable } from "@/types/common-types";
-import { MoveDown } from "lucide-react";
+import { ChevronDown, MoveDown } from "lucide-react";
 import Image from "next/image";
 
 type ServiseTableProps = {
@@ -19,7 +20,7 @@ export const ServiseTable = ({ priceTable, name }: ServiseTableProps) => {
 
   return (
     <section className="wrap-primary mb-10 md:mb-20">
-      <div className="md:-translate-x-[50px]">
+      <div className="md:translate-x-[50px]">
         <h2 id="pricing" className="scroll-mt-16 text-center text-title leading-none text-secondary md:scroll-mt-20">
           Ціни на {priceName[name as keyof typeof priceName]}
         </h2>
@@ -43,21 +44,35 @@ export const ServiseTable = ({ priceTable, name }: ServiseTableProps) => {
               </details>
               <div className="accordion-service-content" role="definition">
                 <div className="accordion-service-content-body">
-                  <div className="p-5">
-                    <div className="max-w-[335px] bg-secondary-50">
-                      <figure className="px-4 pt-4">
-                        <div>
-                          <Image
-                            src={imgUrl}
-                            alt={title}
-                            className="h-full w-full object-cover"
-                            width={303}
-                            height={160}
-                          />
-                        </div>
-                        <figcaption className="mt-5 text-2xl font-bold">{title}</figcaption>
-                      </figure>
-                      <p className="p-4 pt-2">{description}</p>
+                  <div className="accardion-drug mb-4 lg:mx-auto lg:p-5">
+                    <details className="" name="drug-1">
+                      <summary className="flex justify-start">
+                        <InfoIcon className="w-5" />
+                        <span className="!px-2 !text-base font-semibold" role="term" aria-details="drug-1">
+                          Про препарат {title}
+                        </span>
+                        <ChevronDown className="accardion-drug-arrow text-secondary" />
+                      </summary>
+                    </details>
+                    <div
+                      className="accardion-drug_content mx-auto mt-2 flex max-w-[335px] flex-col bg-secondary-50"
+                      role="definition"
+                    >
+                      <div className="accardion-drug_content-body">
+                        <figure className="px-4 pt-4">
+                          <div>
+                            <Image
+                              src={imgUrl}
+                              alt={title}
+                              className="size-full object-cover"
+                              width={303}
+                              height={160}
+                            />
+                          </div>
+                          <figcaption className="mt-5 text-2xl font-bold">{title}</figcaption>
+                        </figure>
+                        <p className="p-4 pt-2">{description}</p>
+                      </div>
                     </div>
                   </div>
                   <div className="table-price">
@@ -78,7 +93,8 @@ export const ServiseTable = ({ priceTable, name }: ServiseTableProps) => {
                               )}
                             </td>
                             <td>
-                              {newPrice ? newPrice : price} {newPrice && <span>{price}</span>}
+                              {formatPrice(newPrice ? newPrice : price)}{" "}
+                              {newPrice && <span>{formatPrice(newPrice)}</span>}
                             </td>
                           </tr>
                         ))}

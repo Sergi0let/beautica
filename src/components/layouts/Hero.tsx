@@ -1,5 +1,5 @@
-import { BtnOrLink } from "@/components";
-import Image from "next/image";
+import { BtnOrLink } from "@/components"
+import Image from "next/image"
 
 export const Hero = () => {
   return (
@@ -26,15 +26,15 @@ export const Hero = () => {
             data-delay-two
             className="mb-[var(--16-32)] text-balance text-center text-txt-hero lg:text-pretty lg:text-left"
           >
-            Тут не про зміни, а саме про підкреслення та підтримання Вашої особистої краси! Завдяки сучасним методам та
-            косметологічним технологіям!
+            Ми не змінюємо вашу природну красу — ми допомагаємо її розкрити та підкреслити! Завдяки сучасним методам і
+            передовим косметологічним технологіям ви зможете виглядати впевнено, доглянуто та гармонійно.
           </p>
           <BtnOrLink anchor="#assign-form" title="Записатись на прийом" />
         </div>
         <Image
           data-fade
           data-delay-three
-          className="h-full w-full max-w-[530px] object-cover"
+          className="size-full max-w-[530px] object-cover"
           src="/hero/2.webp"
           width="530"
           height="305"

@@ -11,8 +11,6 @@ export default function Home() {
       <Partners />
       <Sertification />
       <Faq />
-
-      <div className="absolute left-[35%] top-0 h-full w-px bg-orange-700" />
     </main>
   );
 }

@@ -36,7 +36,7 @@ export const SliderSertification = () => {
         <SwiperSlide key={id} className="sertificate-slide">
           <div className="cursor-pointer transition-transform duration-300 ease-in-out hover:z-50 hover:scale-110">
             <div className="z-50 w-full">
-              <Image src={imgUrl} alt={title} width={220} height={300} className="h-full w-full object-cover" />
+              <Image src={imgUrl} alt={title} width={220} height={300} className="size-full object-cover" />
             </div>
             <h3 className="mt-3 font-robotoCondensed text-sm md:text-xl">{title}</h3>
           </div>

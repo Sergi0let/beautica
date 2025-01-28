@@ -11,7 +11,6 @@ import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 export const BeforeAfterList = ({ data, slug }: { data: beforAfterDataType[]; slug: string }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const dialogRefs = useRef<(HTMLDialogElement | null)[]>([]);
-
   const refList = useRef<HTMLUListElement>(null);
   const isTabletOrLarger = useMediaQuery({ minWidth: 1024 });
   const [isMounted, setIsMounted] = useState(false);
@@ -85,7 +84,7 @@ export const BeforeAfterList = ({ data, slug }: { data: beforAfterDataType[]; sl
                   <div className="before-group-image-container hover:opacity-50">
                     <Image src={`/${imgUrl}`} className="size-full object-cover" width={140} height={140} alt={name} />
                   </div>
-                  {slug === "/" && <p className="before-text-caption">{name}</p>}
+                  {!slug && <p className="before-text-caption">{name}</p>}
                 </div>
               ) : (
                 <Drawer>
@@ -99,12 +98,12 @@ export const BeforeAfterList = ({ data, slug }: { data: beforAfterDataType[]; sl
                         alt={name}
                       />
                     </div>
-                    {slug === "/" && <p className="text-xs font-medium uppercase">{name}</p>}
+                    <p className="text-xs font-medium uppercase">{!slug && name}</p>
                   </DrawerTrigger>
 
                   <DrawerContent className="px-5">
                     <div className="mx-auto">
-                      <div className="md:max-w-[40vh] lg:max-w-max">
+                      <div className="mx-auto w-[50vw] max-w-[360px]">
                         <Image
                           src={`/${imgUrl}`}
                           className="size-full object-cover"
@@ -114,7 +113,7 @@ export const BeforeAfterList = ({ data, slug }: { data: beforAfterDataType[]; sl
                         />
                       </div>
                       <DialogTitle className="pb-5 pt-2 text-center font-robotoCondensed text-2xl font-medium uppercase">
-                        {slug === "/" && name}
+                        {!slug && name}
                       </DialogTitle>
                     </div>
                   </DrawerContent>
@@ -144,9 +143,7 @@ export const BeforeAfterList = ({ data, slug }: { data: beforAfterDataType[]; sl
                 height={320}
               />
             </div>
-            {slug === "/" && (
-              <figcaption className="text-muted-foreground mt-4 text-center text-sm">{item.name}</figcaption>
-            )}
+            {!slug && <figcaption className="mt-4 text-center text-sm">{item.name}</figcaption>}
           </figure>
         </dialog>
       ))}

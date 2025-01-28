@@ -12,7 +12,7 @@ export const NavMenuList = () => {
   const segment = pathname.split("/")[1] ? "servesPage" : "mainPage";
   const menuData: NavMenuItemType[] = navMenuList[segment];
   return (
-    <nav className="hidden h-full w-full justify-center min-[1540px]:flex">
+    <nav className="hidden size-full justify-center min-[1540px]:flex">
       <ul className="h-full w-fit flex-1 items-center justify-center min-[1540px]:mr-4 min-[1540px]:flex">
         {menuData.map(({ name, link }, index) => (
           <li key={index} className="header-item">

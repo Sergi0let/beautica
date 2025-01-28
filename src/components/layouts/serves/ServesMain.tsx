@@ -31,7 +31,7 @@ export const ServesMain = ({ name, description, imgUrl }: ServesMainProps) => {
         </div>
       </div>
       <figure className="h-auto max-h-[638px] overflow-hidden rounded-2xl bg-secondary-50 md:rounded-[32px]">
-        <Image src={imgUrl} alt={name} className="h-full w-full object-cover" width={770} height={538} />
+        <Image src={imgUrl} alt={name} className="size-full object-cover" width={770} height={538} />
       </figure>
     </div>
   );

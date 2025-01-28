@@ -48,7 +48,7 @@ export const MobMenu = ({ className }: MobMenuProps) => {
                 </Link>
               ))}
           </div>
-          <ul className="border-b border-t border-secondary-75 py-4">
+          <ul className="border-y border-secondary-75 py-4">
             {linkData.map(({ link, name }, index) => (
               <li key={index}>
                 <a
@@ -77,7 +77,9 @@ export const MobMenu = ({ className }: MobMenuProps) => {
             type="primary"
             classsName="uppercase flex-1 border-b border-secondary-75 flex-col-reverse pt-[10px] pb-6 gap-[10px]"
           />
-          <BtnOrLink title="Записатись на прийом" className="mb-8 min-h-8" />
+          <div>
+            <BtnOrLink title="Записатись на прийом" className="mb-8 min-h-8" />
+          </div>
         </SheetContent>
       </Sheet>
     </div>

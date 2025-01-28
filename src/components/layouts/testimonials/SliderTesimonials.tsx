@@ -55,7 +55,7 @@ export const SliderTesimonials = () => {
       ))}
       <SwiperSlide className="testim-slide">
         <div className="flex h-full flex-col justify-between">
-          <h3 className="font-regular text-txt-32-42 leading-tight">Запишіться і підкресліть свою красу!</h3>
+          <h3 className="text-txt-32-42 font-normal leading-tight">Запишіться і підкресліть свою красу!</h3>
           <BtnOrLink title="Записатись на прийом" />
         </div>
       </SwiperSlide>

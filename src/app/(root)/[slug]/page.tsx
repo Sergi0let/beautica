@@ -4,7 +4,7 @@ export default async function PageServes({ params }: { params: Promise<{ slug: s
   const slug = (await params).slug;
 
   const data = servicesData.find((item) => item.pageUrl === slug);
-  // console.log(data?.priceTable);
+
   return (
     <main className="relative">
       <ServesMain name={data?.name || ""} description={data?.description || ""} imgUrl={data?.imgUrl || ""} />
@@ -14,8 +14,6 @@ export default async function PageServes({ params }: { params: Promise<{ slug: s
       <Testimanials />
       <Sertification />
       <Faq />
-
-      <div className="absolute left-[35%] top-0 h-full w-px bg-orange-700" />
     </main>
   );
 }

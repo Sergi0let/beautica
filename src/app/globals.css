@@ -335,10 +335,38 @@ h6 {
   }
   .accordion-service-content-body {
     overflow: hidden;
-    @apply grid lg:grid-cols-[1fr_2fr] xl:grid-cols-[var(--40-533)_1fr];
+    @apply flex flex-col-reverse lg:grid lg:grid-cols-[1fr_2fr] xl:grid-cols-[var(--40-533)_1fr];
   }
   .accordion-service-arrow {
     @apply absolute right-4 top-1/2 size-8 -translate-y-1/2 text-secondary transition-all duration-300 ease-in-out;
+  }
+  .accardion-drug {
+    @apply relative;
+  }
+  .accardion-drug details {
+    @apply transition-colors duration-700 ease-in-out lg:hidden;
+  }
+  @media (max-width: 1024px) {
+    .accardion-drug_content {
+      grid-template-rows: 0fr;
+
+      @apply grid transition-all duration-300 ease-in-out;
+    }
+    .accardion-drug details[open] + .accardion-drug_content {
+      grid-template-rows: 1fr;
+    }
+    .accardion-drug details[open] {
+      @apply border-none bg-white;
+    }
+    .accardion-drug details[open] .accardion-drug-arrow {
+      @apply rotate-180 transition-transform;
+    }
+  }
+
+  .accardion-drug_content-body {
+    overflow: hidden;
+  }
+  .accardion-drug_content {
   }
   /* ========= */
   /* partners */
@@ -472,9 +500,7 @@ h6 {
   }
   /* ========== */
   /* slider testimonial */
-  dialog::backdrop {
-    background: rgba(255, 0, 0, 0.25);
-  }
+
   .testim-wrapper.swiper-wrapper {
     overflow-x: visible;
   }

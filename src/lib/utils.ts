@@ -24,3 +24,8 @@ export const formatDate = (dateStr: string) => {
 
   return formattedDate;
 };
+
+export const formatPrice = (price: number | null): string => {
+  if (!price) return "0";
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
