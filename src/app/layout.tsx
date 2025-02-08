@@ -1,3 +1,4 @@
+import { Thumbnail } from "@/lib/resources";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -91,10 +92,40 @@ const sourceSerifPro = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Beautica",
-  description: "About beauty and beautician",
-};
+const baseUrl = "https://beautica.vercel.app/";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const title = "Beautica";
+
+  const description = "About beauty and beautician";
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title,
+    description,
+    themeColor: "black",
+    openGraph: {
+      title,
+      description,
+      url: baseUrl,
+      images: [
+        {
+          url: Thumbnail,
+          width: 1200,
+          height: 630,
+          alt: "Preview image for Beautica",
+        },
+      ],
+      locale: "uk_UA",
+      type: "website",
+      siteName: "Beautica",
+    },
+  };
+}
+// export const metadata: Metadata = {
+//   title: "Beautica",
+//   description: "About beauty and beautician",
+// };
 
 export default function RootLayout({
   children,
